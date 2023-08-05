@@ -1,13 +1,21 @@
-import React from 'react';
-import Chart from 'chart.js/auto';
+import React from "react";
+import Chart from "chart.js/auto";
 
 const RevenuDis = () => {
   const data = {
-    labels: ['Asia', 'South america', 'North america','Australia','Antartica','Europe','Africa'],
+    labels: [
+      "Asia",
+      "South america",
+      "North america",
+      "Australia",
+      "Antartica",
+      "Europe",
+      "Africa",
+    ],
     datasets: [
       {
-        label: 'Revenue distributed by continent',
-        data: [300, 50, 100,22,12,44,66],
+        label: "Revenue distributed by continent",
+        data: [300, 50, 100, 22, 12, 44, 66],
         // backgroundColor: ['rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)'],
         hoverOffset: 4,
       },
@@ -15,21 +23,21 @@ const RevenuDis = () => {
   };
 
   const chartConfig = {
-    type: 'doughnut',
+    type: "doughnut",
     data: data,
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      cutout: '80%', // Adjust the cutout value here to set the radius (e.g., '70%')
+      cutout: "80%", // Adjust the cutout value here to set the radius (e.g., '70%')
       legend: {
         display: true, // Disable the default legend
-        position:"left"
+        position: "left",
       },
     },
   };
 
   React.useEffect(() => {
-    const chartInstance = new Chart('myChart', chartConfig);
+    const chartInstance = new Chart("myChart", chartConfig);
 
     return () => {
       chartInstance.destroy();

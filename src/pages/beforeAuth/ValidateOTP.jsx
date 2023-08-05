@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import SsidChartIcon from '@mui/icons-material/SsidChart';
-import { Button, TextField } from '@mui/material';
+import { Button } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
-import OTPInput, { ResendOTP } from "otp-input-react";
+import OTPInput from "otp-input-react";
 import { userOtpverify } from '../beforeAuth/redux/loginSlice';
 export default function ValidateOTP() {
   const validate=useSelector(state=>state);

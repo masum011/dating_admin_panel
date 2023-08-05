@@ -14,7 +14,7 @@ export default function SignInPage() {
         <p>A reset email will be sent to your email id</p>
       </div>
       <div className="back-tosign-btn text-center py-12 px-12">
-           <Button variant='contained' fullWidth  sx={{padding:"10px",borderRadius:"83px",height:"56px",textTransform:"none",color:"#878787",backgroundColor:"#FF6B6B",color:"white"}} onClick={()=>navigate('/login')}>Sign In</Button>
+           <Button variant='contained' fullWidth  sx={{padding:"10px",borderRadius:"83px",height:"56px",textTransform:"none",color:"#878787",backgroundColor:"#FF6B6B"}} onClick={()=>navigate('/login')}>Sign In</Button>
         </div>
       </div>
     </div>

@@ -4,30 +4,24 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import {
   Checkbox,
   Divider,
   FormControl,
-  FormControlLabel,
   InputLabel,
   MenuItem,
   Select,
-  TextField,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import CloseIcon from "@mui/icons-material/Close";
 import { useForm } from "react-hook-form";
-import { CheckBox } from "@mui/icons-material";
 const style = {
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: "814px",
-  //   height:"auto",
   bgcolor: "background.paper",
-  //   border: '2px solid #000',
   boxShadow: 24,
   p: 4,
   borderRadius: "16px",
@@ -40,13 +34,13 @@ export default function ContentMgModal({ isOpen, isClose }) {
   const handleChange = (event) => {
     setChecked(event.target.checked);
   };
-  const [age, setAge] = React.useState('');
+  const [age, setAge] = React.useState("");
 
   const handleChange1 = (event) => {
     setAge(event.target.value);
   };
 
-  const { register, handleSubmit, getValues } = useForm({
+  const {  handleSubmit, getValues } = useForm({
     defaultValues: {
       firstName: "Grace",
       lastName: "Hopper",
@@ -109,75 +103,82 @@ export default function ContentMgModal({ isOpen, isClose }) {
                 <label>Recurring Notification</label>
                 {checked ? (
                   <>
-                  <div className="flex gap-8 py-8">
-                    <FormControl fullWidth>
-                      <InputLabel id="demo-simple-select-label">Age</InputLabel>
-                      <Select
-                        labelId="demo-simple-select-label"
-                        id="demo-simple-select"
-                        value={age}
-                        label="Age"
-                        onChange={handleChange1}
-                        size="small"
-                        className="w-[100%]"
-                      >
-                        <MenuItem value={10}>Ten</MenuItem>
-                        <MenuItem value={20}>Twenty</MenuItem>
-                        <MenuItem value={30}>Thirty</MenuItem>
-                      </Select>
-                    </FormControl>
-                    <FormControl fullWidth>
-                      <InputLabel id="demo-simple-select-label">Age</InputLabel>
-                      <Select
-                        labelId="demo-simple-select-label"
-                        id="demo-simple-select"
-                        value={age}
-                        label="Age"
-                        onChange={handleChange1}
-                        size="small"
-                        className="w-[100%]"
-                      >
-                        <MenuItem value={10}>Ten</MenuItem>
-                        <MenuItem value={20}>Twenty</MenuItem>
-                        <MenuItem value={30}>Thirty</MenuItem>
-                      </Select>
-                    </FormControl>
-                  </div>
-                  <div className="flex gap-8">
-                    <FormControl fullWidth>
-                      <InputLabel id="demo-simple-select-label">Age</InputLabel>
-                      <Select
-                        labelId="demo-simple-select-label"
-                        id="demo-simple-select"
-                        value={age}
-                        label="Age"
-                        onChange={handleChange1}
-                        size="small"
-                        className="w-[100%]"
-                      >
-                        <MenuItem value={10}>Ten</MenuItem>
-                        <MenuItem value={20}>Twenty</MenuItem>
-                        <MenuItem value={30}>Thirty</MenuItem>
-                      </Select>
-                    </FormControl>
-                    <FormControl fullWidth>
-                      <InputLabel id="demo-simple-select-label">Age</InputLabel>
-                      <Select
-                        labelId="demo-simple-select-label"
-                        id="demo-simple-select"
-                        value={age}
-                        label="Age"
-                        onChange={handleChange1}
-                        size="small"
-                        className="w-[100%]"
-                      >
-                        <MenuItem value={10}>Ten</MenuItem>
-                        <MenuItem value={20}>Twenty</MenuItem>
-                        <MenuItem value={30}>Thirty</MenuItem>
-                      </Select>
-                    </FormControl>
-                  </div>
-
+                    <div className="flex gap-8 py-8">
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">
+                          Age
+                        </InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={age}
+                          label="Age"
+                          onChange={handleChange1}
+                          size="small"
+                          className="w-[100%]"
+                        >
+                          <MenuItem value={10}>Ten</MenuItem>
+                          <MenuItem value={20}>Twenty</MenuItem>
+                          <MenuItem value={30}>Thirty</MenuItem>
+                        </Select>
+                      </FormControl>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">
+                          Age
+                        </InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={age}
+                          label="Age"
+                          onChange={handleChange1}
+                          size="small"
+                          className="w-[100%]"
+                        >
+                          <MenuItem value={10}>Ten</MenuItem>
+                          <MenuItem value={20}>Twenty</MenuItem>
+                          <MenuItem value={30}>Thirty</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </div>
+                    <div className="flex gap-8">
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">
+                          Age
+                        </InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={age}
+                          label="Age"
+                          onChange={handleChange1}
+                          size="small"
+                          className="w-[100%]"
+                        >
+                          <MenuItem value={10}>Ten</MenuItem>
+                          <MenuItem value={20}>Twenty</MenuItem>
+                          <MenuItem value={30}>Thirty</MenuItem>
+                        </Select>
+                      </FormControl>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">
+                          Age
+                        </InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={age}
+                          label="Age"
+                          onChange={handleChange1}
+                          size="small"
+                          className="w-[100%]"
+                        >
+                          <MenuItem value={10}>Ten</MenuItem>
+                          <MenuItem value={20}>Twenty</MenuItem>
+                          <MenuItem value={30}>Thirty</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </div>
                   </>
                 ) : (
                   ""

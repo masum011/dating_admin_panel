@@ -1,8 +1,6 @@
-import { React, useEffect, useState } from "react";
-import cover from "../../assets/images/login/login.jpg";
+import { React, useState } from "react";
 import logo from "../../assets/images/login/logo.png";
 import { useForm } from "react-hook-form";
-import SsidChartIcon from "@mui/icons-material/SsidChart";
 import { Button } from "@mui/material";
 import Checkbox from "@mui/material/Checkbox";
 import { TextField, InputAdornment, IconButton } from "@material-ui/core";
@@ -13,16 +11,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { userLogin } from "../beforeAuth/redux/loginSlice";
 export default function Login() {
   const navigate = useNavigate();
-const dispatch=useDispatch()
-const user = useSelector((state) => state.user);
-console.log(user,"usermanage")
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
+  console.log(user, "usermanage");
   const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => setShowPassword(!showPassword);
 
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid, isDirty },
+    formState: {  isValid, isDirty },
   } = useForm();
   const [rememberMe, setRememberMe] = useState(false);
 
@@ -38,11 +36,9 @@ console.log(user,"usermanage")
     setRememberMe(event.target.checked);
   };
 
- 
-
   const onSubmit = (data) => {
-    const payload={...data,rememberMe}
-    dispatch(userLogin(payload))
+    const payload = { ...data, rememberMe };
+    dispatch(userLogin(payload));
 
     if (rememberMe) {
       localStorage.setItem("rememberMe", rememberMe.toString());
@@ -56,14 +52,11 @@ console.log(user,"usermanage")
         navigate("/");
       }
     }, 1000);
-
   };
-
 
   return (
     <>
-      <div
-        className="login-bg">
+      <div className="login-bg">
         <div className="login-flow h-[536px] w-[464px] py-8 bg-[white] rounded  ">
           <div className="text-left-section text-center">
             <img className="m-[auto] py-2" src={logo} alt="logo" />
@@ -71,7 +64,6 @@ console.log(user,"usermanage")
           </div>
           <div className="login-input-filed pb-8 px-8">
             <form onSubmit={handleSubmit(onSubmit)}>
-           
               <TextField
                 type="email"
                 label="Email Id"
@@ -133,7 +125,7 @@ console.log(user,"usermanage")
                 disabled={!isDirty || !isValid}
               >
                 Sign In
-                <span>{user.isLoading ? 'loading....' : " "}</span>
+                <span>{user.isLoading ? "loading...." : " "}</span>
               </Button>
               {/* <button disabled={!isDirty || !isValid}  className="w-[100%] bg-[#FF6B6B] p-4 text-white"style={{borderRadius:"83px"}}>sign In</button> */}
               <div className="text-center py-8">

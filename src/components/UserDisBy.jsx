@@ -1,12 +1,12 @@
-import React from 'react'
-import Chart from 'chart.js/auto';
+import { React, useEffect } from "react";
+import Chart from "chart.js/auto";
 
 const UserDisBy = () => {
   const data = {
-    labels: ['Total profile blocked', 'Total profile to be blocked'],
+    labels: ["Total profile blocked", "Total profile to be blocked"],
     datasets: [
       {
-        label: 'User Profile',
+        label: "User Profile",
         data: [300, 250],
         // backgroundColor: ['rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)'],
         hoverOffset: 4,
@@ -15,26 +15,24 @@ const UserDisBy = () => {
   };
 
   const chartConfig = {
-    type: 'doughnut',
+    type: "doughnut",
     data: data,
     options: {
       responsive: false,
-      cutout: '80%', // Adjust the cutout value here to set the radius (e.g., '70%')
+      cutout: "80%", // Adjust the cutout value here to set the radius (e.g., '70%')
       legend: {
         display: true, // Disable the default legend
-        position: "left"
+        position: "left",
       },
-     
     },
   };
 
-  React.useEffect(() => {
-    const chartInstance = new Chart('profileblock', chartConfig);
-    
+  useEffect(() => {
+    const chartInstance = new Chart("profileblock", chartConfig);
     return () => {
       chartInstance.destroy();
     };
-  }, []);
+  },[]);
 
   return (
     <div>
@@ -44,5 +42,3 @@ const UserDisBy = () => {
 };
 
 export default UserDisBy;
-
-

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import DashboardCard from "../../components/DashboardCard";
 import UserActivity from "../../components/UserActivity";
 import RevenuDis from "../../components/RevenuDis";
@@ -6,11 +6,11 @@ import GenderRatio from "../../components/GenderRatio";
 import AgeCategory from "../../components/AgeCategory";
 import UserDistributed from "../../components/UserDistributed";
 import UserDisBy from "../../components/UserDisBy";
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { useNavigate } from "react-router-dom";
 import NewTicketRaise from "../../components/NewTicketRaise";
 export default function Dashboard() {
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   return (
     <div
       style={{
@@ -42,9 +42,18 @@ export default function Dashboard() {
         <div className="new-ticket-raise bg-[white] mt-[2rem] p-[2rem]">
           <div className="questionaire-title flex justify-between pb-4">
             <p className="text-[20px] font-semibold">New ticket raised</p>
-            <p onClick={()=>navigate('/help-desk')} className="cursor-pointer text-[#FF6B6B]"> View more<span><ChevronRightIcon /></span> </p>
+            <p
+              onClick={() => navigate("/help-desk")}
+              className="cursor-pointer text-[#FF6B6B]"
+            >
+              {" "}
+              View more
+              <span>
+                <ChevronRightIcon />
+              </span>{" "}
+            </p>
           </div>
-            <NewTicketRaise/>
+          <NewTicketRaise />
         </div>
       </div>
       <div className="w-[30%] rounded ">
@@ -69,7 +78,7 @@ export default function Dashboard() {
           <div className="user-dis p-[2rem] bg-[white] ">
             <p className="font-semibold">Users distributed by continent</p>
             <div className="flex justify-center">
-            <UserDisBy />
+              <UserDisBy />
             </div>
           </div>
         </div>

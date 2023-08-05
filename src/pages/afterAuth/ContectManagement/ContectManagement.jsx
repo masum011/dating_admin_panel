@@ -1,8 +1,7 @@
-import { Box, InputAdornment, MenuItem, Select, Button } from "@mui/material";
+import { Box } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import DownloadIcon from "@mui/icons-material/Download";
 import AddIcon from "@mui/icons-material/Add";
 import ContentMgModal from "../../../components/ContentMgModal";
 const rows = [
@@ -65,9 +64,9 @@ const columns = [
 
 export default function ContectManagement() {
   const navigate = useNavigate();
-  const [open,setIsOpen]=useState(false);
-  const handleOpen=()=>setIsOpen(true)
-  const handleClose=()=>setIsOpen(false);
+  const [open, setIsOpen] = useState(false);
+  const handleOpen = () => setIsOpen(true);
+  const handleClose = () => setIsOpen(false);
   const handleSelectionModelChange = (e) => {
     console.log(e);
     if (e[0]) {
@@ -86,7 +85,10 @@ export default function ContectManagement() {
                 <input type="text" placeholder="Search users" />
               </div>
               <div className="add-notification-btn">
-                <button className="px-8 py-[10px] bg-[#FF6B6B] text-[white]"onClick={handleOpen} >
+                <button
+                  className="px-8 py-[10px] bg-[#FF6B6B] text-[white]"
+                  onClick={handleOpen}
+                >
                   <AddIcon fontSize="small" /> Add notification
                 </button>
               </div>
@@ -109,7 +111,7 @@ export default function ContectManagement() {
           </Box>
         </div>
       </div>
-        <ContentMgModal isOpen={open} isClose={handleClose}/>
+      <ContentMgModal isOpen={open} isClose={handleClose} />
     </div>
   );
 }
